@@ -1,0 +1,196 @@
+807   yum install docker-ce docker-ce-cli containerd.io
+  808  systemctl start docker.service 
+  809  cat /etc/os-release 
+  810  uname -a
+  811  uname -r
+  812  yum install -y device-mapper-persistent-data.x86_64 lvm22
+  813  yum install -y device-mapper-persistent-data.x86_64 lvm2
+  814  systemctl enable docker
+  815  docker version
+  816  docker run hello-word
+  817  docker run hello-world
+  818  usermod -aG docker oia
+  819  su oia
+  820  docker ps
+  821  docker ps -a
+  822  docker rmi -f hello-world
+  823  docker ps -a
+  824  docker images
+  825  docker pull alpine
+  826  docker images
+  827  docker ps -a
+  828  docker kill f003e6f202f5
+  829  docker container -a
+  830  docker container ps  -a
+  831  docker run ubuntu
+  832  docker ps
+  833  docker ps -a
+  834  docker run -ti ubuntu 
+  835  docker ps -a
+  836  docker run -ti ubuntu bash
+  837  docker run -ti ubuntu ps
+  838  ps
+  839  ps -a
+  840  docker run --name=cont01 --hostname=ubuntu -it ubuntu
+  841  ps -a
+  842  docker ps -a
+  843  docker run -d -it centos ping 127.0.0.1
+  844  docker ps
+  845  docker logs 8159ea8282b1
+  846  docker attach 8159ea8282b1
+  847  docker logs 8159ea8282b1
+  848  docker attach 8159ea8282b1
+  849  docker run -d -it centos ping 127.0.0.1
+  850  docker attach 8159ea8282b1
+  851  docker ps
+  852  docker logs afe304f2d83e
+  853  docker attach afe304f2d83e
+  854  docker ps
+  855  docker attach afe304f2d83e
+  856  docker ps
+  857  docker ps -a
+  858  docker run -d -P nginx
+  859  docker ps
+  860  curl http://0.0.0.0:32771
+  861  curl http://0.0.0.0:8080
+  862  docker stop nginx
+  863  docker ps
+  864  docker stop 1d81ad311926
+  865  curl http://0.0.0.0:8080
+  866  docker ps
+  867  docker start nginx
+  868  docker run nginx
+  869  docker ps
+  870  docker ps -a
+  871  docker kill da7102577d74
+  872  docker images
+  873  docker run nginx
+  874  docker ps -a
+  875  docker ps 
+  876  docker rmi nginx
+  877  docker kill da7102577d74
+  878  docker stop ae2feff98a0c
+  879  docker  kill ae2feff98a0c
+  880  docker image
+  881  docker images
+  882  docker --help |more
+  883  docker rmi nginx
+  884  docker rm da7102577d74
+  885  docker ps
+  886  docker images
+  887  docker start nginx
+  888  docker run nginx
+  889  docker images
+  890  docker ps 
+  891  docker ps  -a
+  892  docker rm f21bfb09a4a0 209c83ddd520 1d81ad311926
+  893  docker ps  -a
+  894  docker run -d -P nginx
+  895  docker ps
+  896  docker pull nginx
+  897  docker stop 10b5f93672ac
+  898  docker start 10b5f93672ac
+  899  docker ps
+  900  curl http://0.0.0.0:32771
+  901  curl http://0.0.0.0:49155
+  902  docker ps  -a
+  903  docker kill 10b5f93672ac
+  904  docker ps  -a
+  905  docker attach 8159ea8282b1
+  906  docker run -d -it --name=host1 --hostname=Conten-Centos  centos ping 127.
+0.0.1 
+  907  docker exec  -it host1 
+  908  docker exec  -it host1  bash
+  909  ocker run -d -P --name=web --hostname=conten-Web nginx
+  910  docker run -d -P --name=web --hostname=conten-Web nginx
+  911  docker ps  -a
+  912  docker ps 
+  913  docker inspect  2915bdb6f187
+  914  docker inspect  --format='{{jason .Networks}}' 2915bdb6f187
+  915  docker inspect  --format='{{json .Networks}}' 2915bdb6f187
+  916  docker inspect  --format='{{json .NetworkSettings}}' 2915bdb6f187
+  917  docker inspect  --format='{{NetworkSettings.IPv6Gateway}}' 2915bdb6f187
+  918  docker inspect  --format='{{NetworkSettings.}}' 2915bdb6f187
+  919  docker inspect  --format='{{NetworkSettings.IPAddress}}' 2915bdb6f187
+  920  docker inspect  --format='{{.NetworkSettings.IPAddress}}' 2915bdb6f187
+  921  docker inspect  --format='{{.NetworkSettings.IPv6Gateway}}' 2915bdb6f187
+  922  docker inspect  --format='{{.NetworkSettings.Gateway}}' 2915bdb6f187
+  923  docker ps
+  924  docker ps -a
+  925  docker ps -l
+  926  docker ps -slast
+  927  docker ps --last
+  928  docker ps --last 3
+  929  docker ps 
+  930  docker ps --filter name=web
+  931  docker ps --filter name=nginx
+  932  docker ps --filter status=run
+  933  docker ps --filter status=up
+  934  docker ps -a
+  935  docker ps --filter status=Up
+  936  docker ps --filter status=Exited
+  937  docker ps --filter status=exited
+  938  docker ps --filter status=run
+  939  docker ps --filter status=up
+  940  docker ps --filter status=Up
+  941  docker ps -aq --filter status=exited
+  942  docker rm $(docker ps -aq --filter status=exited)
+  943  docker ps
+  944  docker ps -a
+  945  docker run -it --name=mycentos-create centos
+  946  docker ps -a
+  947  docker diff e2fd3a31e104
+  948  docker ps -a
+  949  docker commit mycentos-create mesimages/centos:1.0
+  950  docker images
+  951  docker run -it mesimages/centos:1.0
+  952  pwd
+  953  ll
+  954  cd
+  955  ll
+  956  locate Docker
+  957  locate docker
+  958  cd
+  959  mkdir /appli/Docker
+  960  mkdir -p /appli/Docker 
+  961  cd  /appli/Docker/
+  962  vim DockerFile
+  963  docker build -t mesimages/centos2:1.0 .
+  964  ll
+  965  mv DockerFile Dockerfile 
+  966  docker build -t mesimages/centos2:1.0 .
+  967  vim DockerFile
+  968  pwd
+  969  ll
+  970  cat Dockerfile 
+  971  vim Dockerfile 
+  972  docker build -t mesimages/centos2:1.1 .
+  973  vim Dockerfile 
+  974  docker build -t mesimages/centos2:1.1 .
+  975  docker images
+  976  docker history  mesimages/centos
+  977  docker history  mesimages/centos2
+  978  docker history  mesimages/centos2:1.1
+  979  df 
+  980  mkdir Expl_Dockerfile
+  981  mv Dockerfile Expl_Dockerfile/
+  982  date
+  983  docker ps -a
+  984  docker ps 
+  985  docker ps -a
+  986  docker export -o mycentos.tar mycentos-create
+  987  ll -lh
+  988  tar tvf mycentos.tar 
+  989  ll -tr
+  990  gzip  mycentos.tar 
+  991  ll -tr
+  992  ll -lh
+  993  docker import mycentos.tar.gz mesimages/centos_import:1.0
+  994  docker images
+  995  docker run -it mesimages/centos_import:1.0 
+  996  docker run -it mesimages/centos_import:1.0  bash
+  997  docker ps -a
+  998  docker history mesimages/centos_import:1.0 
+  999  history |more
+[root@localhost oia]#          
+
