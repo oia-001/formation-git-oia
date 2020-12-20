@@ -193,4 +193,276 @@
   998  docker history mesimages/centos_import:1.0 
   999  history |more
 [root@localhost oia]#          
+786  docker exec -it d7d375633240 bash
+  787  docker exec -it d7d375633240fd4ad0dc20387d8e7c1eff30fc148edbda3cd9f7624f4c83d9ff bash
+  788  docker ps
+  789  docker ps -a
+  790  docker run -d --name=web-nginx2 -v /home/oia/nginx/:/etc/nginx nginx:latest 
+  791  docker rm d7d375633240fd4ad0dc20387d8e7c1eff30fc148edbda3cd9f7624f4c83d9ff
+  792  docker ps -a
+  793  docker run -d --name=web-nginx2 -v /home/oia/nginx/:/etc/nginx 
+  794  docker run -d --name=web-nginx2 -v /home/oia/nginx/:/etc/nginx nginx
+  795  docker ps
+  796  docker ps -a
+  797  docker run -d --name=web-nginx1 -v /home/oia/nginx/:/etc/nginx nginx:latest 
+  798  docker ps
+  799  docker run -d --name=web --hostname=conten-Web nginx
+  800  docker ps
+  801  docker exec -it web bash
+  802  docker ps
+  803  docker stop web
+  804  docker ps
+  805  docker run -d --name=web1 -v /home/oia/nginx/:/etc/nginx --hostname=web2 nginx
+  806  docker ps
+  807  docker ps -a
+  808  docker rm $(docker ps -aq --filter status=exited)
+  809  docker ps -a
+  810  docker volume ps 
+  811  docker volume ls
+  812  docker volume rm $(docker volume ls -q}
+  813  docker volume rm $(docker volume ls -q)
+  814  docker volume ls -q
+  815  docker volume ps 
+  816  docker volumels
+  817  docker volume ls
+  818  docker run --name -v /data/ busybox true
+  819  mkdir /data
+  820  docker run --name=datass -v /data/ busybox true
+  821  docker ps -a
+  822  docker rm $(docker ps -aq --filter status=exited)
+  823  docker ps -a
+  824  docker images
+  825  docker volume  ls
+  826  docker run -it --volumes-from datas --name=host1 centos bash
+  827  docker run -it --volumes-from datass --name=host1 centos bash
+  828  docker run -it --volumes-from datass --name=host2 centos bash
+  829  history |grep --it
+  830  history |grep 'run --it'
+  831  history |grep 'run it'
+  832  history |grep 'run -it'
+  833  docker run -it --volumes-from datass --name=host2 centos bash
+  834  docker run -it --volumes-from datas --name=host2 centos bash
+  835  docker run --name=datass -v /data/ busybox true
+  836  docker ps
+  837  docker volume ls
+  838  docker run --name=datass -v /data/ busybox true
+  839  docker volume ls
+  840  docker ps -a
+  841  docker run -it --volumes-from  datass --name=host1 centos bash
+  842  docker rm host1
+  843  docker run -it --volumes-from  datass --name=host2 centos bash
+  844  docker rm host2
+  845  docker run -it --volumes-from  datass --name=host3 centos bash
+  846  ip a
+  847  yum install -y bridge-utils
+  848  yum search bridge
+  849  yum search bridge-util
+  850  yum search bridge-utils
+  851  yum search bridge-*
+  852  rpm -qa |grep bridge
+  853  yum install bridge
+  854  yum install bridge-utils
+  855  nmcli connection show
+  856  nmcli connection delete 6fad5c9c-fbc6-4855-808b-e3ee22afaf63
+  857  nmcli connection show
+  858  docker ps 
+  859  docker run -d -it  centos 
+  860  nmcli connection show docker0 
+  861  nmcli connection show 
+  862  nmcli connection show  docker0
+  863  docker network  ls
+  864  docker network create --driver bridge --subnet 10.1.0.0/16 --gateway 10.1.0.1 prod
+  865  docker network create --driver bridge --subnet 10.2.0.0/16 --gateway 10.2.0.1 dev
+  866  docker network  ls
+  867  docker network inspect prod
+  868  docker network inspect dev
+  869  docker run -d -it --network prod --name= cont1 --hostname host1 alpine
+  870  docker run -d -it --network prod --name cont1 --hostname host1 alpine
+  871  docker run -d -it --network prod --name cont1 --hostname host2 alpine
+  872  docker run -d -it --network prod --name cont2 --hostname host2 alpine
+  873  docker network inspect prod
+  874  docker attach cont1
+  875  docker run -d -it --name  mach1 centos
+  876  docker run -d -it --name  mach2 centos
+  877  docker run  -it --name  mach3 --link mach1 centos
+  878  docker network connect prod mach2
+  879  docker network inspect prod
+  880  docker run -d -p 8080:80 --name=web1 nginx
+  881  docker run -d -p 8080:80 --name nginx10 nginx
+  882  docker ps
+  883  docker stop c9ed9995125c 392f65a1d5db
+  884  docker stop 1eb9b21db426 bfdba995d166 d85474878164
+  885  docker ps
+  886  docker run -d -p 8080:80 --name nginx10 nginx
+  887  docker run -d -p 8080:80 --name=web-oia nginx
+  888  docker ps
+  889  docker ps -a
+  890  docker rm $(docker ps -aq --filter status=exited)
+  891  docker ps 
+  892  docker ps  -a
+  893  docker rm $(docker ps -aq --filter status=created)
+  894  docker ps  -a
+  895  docker run -d -p 8080:80 --name=web-oia nginx
+  896  docker run -d -p 1000:80 --name=web-oia2 nginx
+  897  ifconfig 
+  898  docker port web-oia
+  899  docker ps
+  900  docker port  3277f8bcf7dc
+  901  curl http:192.168.0.36
+  902  curl http:192.168.0.36:1000
+  903  curl http://192.168.0.36:1000
+  904  curl http://127.0.0.1:1000
+  905  docker run -d -p 127.0.0.1:80 --name=web-oia3 nginx
+  906  docker run -d -p 127.0.0.1:2000:80 --name=web-oia3 nginx
+  907  curl http://127.0.0.1:1000
+  908  curl http://127.0.0.1:2000
+  909  curl http://192.168.0.36:2000
+  910  curl http://127.0.0.1:2000
+  911  curl http://192.168.0.36:2000
+  912  docker run -d -P  --name=web-oia4 nginx
+  913  docker ps
+  914  docker run -d -P  --name=web-oia5 nginx
+  915  docker ps
+  916  ll
+  917  cd /etc/ansible/
+  918  ll
+  919  cd
+  920  mkdir ansible
+  921  vim simpleplaybook.yml
+  922  ansible-playbook simpleplaybook.yml 
+  923  vim /etc/ansible/hosts 
+  924  systemctl status httpd
+  925  ansible-playbook simpleplaybook.yml 
+  926  ll
+  927  cd Ansible/
+  928  ll
+  929  ansible-playbook install_nginx.yml 
+  930  mv ../*yml .
+  931  ll
+  932  rm -rf ../ansible/
+  933  ll
+  934  ansible -all -m ping
+  935  ansible all -m ping
+  936  vim /etc/ansible/hosts 
+  937  ansible all -m ping
+  938  docker ps 
+  939  docker attach bb2141cdec19
+  940  docker ps 
+  941  docker inspect  bb2141cdec19
+  942  docker ps 
+  943  docker exec -it web-oia2 bash
+  944  docker exec -it web-oia4 bash
+  945  ocker run  -it --name  mach3 --link mach1 centos
+  946  docker run  -it --name  mach3 --link mach1 centos
+  947  docker run  -it --name  mach3  centos
+  948  docker run  -it --name  mach1  centos
+  949  docker run -d -it --network prod --name cont2 --hostname host2 alpine
+  950  docker run -d -it --network prod --name cont1 --hostname host2 alpine
+  951  docker ps 
+  952  docker run -d -it --network prod --name cont1 --hostname host3 alpine
+  953  docker run -d -it --network prod --name cont3 --hostname host3 alpine
+  954  docker ps 
+  955  docker exec -it cont1 bash
+  956  docker exec -it cont3 bash
+  957  docker run -d -it --name  mach2 centos
+  958  docker run  -d -it --name  mach1 centos
+  959  docker rm -f 20c118f7b927d4260a58b4f456c64c522767e95595e17eb297405b8a1e3ec91f
+  960  docker run  -d -it --name  mach1 centos
+  961  docker run  -it --name  mach3 centos
+  962  docker rm -f 2442f426f1c6c45b3aba6d860e38ad0edc082ad818090bf5ddd91c02aa372dae
+  963  docker run  -it --name  mach3 centos
+  964  docker network connect mach1 prod
+  965  docker network connect mach3 prod
+  966  docker network connect prod mach2
+  967  docker network connect prod mach1
+  968  docker network connect prod mach3
+  969  docker run  -it --name  mach3 centos
+  970  docker exec -it mach1 bash
+  971  vim /etc/ansible/hosts 
+  972  ansible all -m ping
+  973  ping 10.1.0.6
+  974  ping 10.1.0.5
+  975  ping 10.1.0.3
+  976  ping 10.1.0.2
+  977  docker exec -it mach1 bash
+  978  cd 
+  979  cd do
+  980  cd Downloads/
+  981  ll
+  982  cd ../
+  983  ll
+  984  cd /home/oia/
+  985  ll -tr
+  986  cd nginx/
+  987  ll
+  988  cd ../
+  989  locate DockerFile
+  990  updatedb 
+  991  df 
+  992  locate DockerFile
+  993  cd
+  994  ll
+  995  rm -f phpMyAdmin-5.0.1-english.tar.gz 
+  996  ll
+  997  cd ISO/
+  998  ll
+  999  git --version
+ 1000  yum install -y git
+ 1001  git --version
+ 1002  git config --global user.name "oia"
+ 1003  git config --global user.email "o.i.a.ratp@gmail.com"
+ 1004  cd
+ 1005  mkdir GIT
+ 1006  ll
+ 1007  cd GIT/
+ 1008  ll
+ 1009  mkdir formations-git
+ 1010  echo "# formation-git-oia" >> README.md
+ 1011  ll
+ 1012  mv README.md formations-git/
+ 1013  cd formations-git/
+ 1014  ll
+ 1015  git init
+ 1016  ll
+ 1017  ls -al
+ 1018  ls -al .git/
+ 1019  git add README.md 
+ 1020  git commit -m "firt commut"
+ 1021  git branch -M mainhist
+ 1022  history 
+ 1023  git branch -M main
+ 1024  git remote add origin https://github.com/oia-001/formation-git-oia.git
+ 1025  git push -u origin main
+ 1026  vim README.md 
+ 1027  git diff
+ 1028  git add .
+ 1029  git commit -m "MAJ readme"
+ 1030  git push
+ 1031  git log 
+ 1032  cp ../../Ansible/* .
+ 1033  git add .
+ 1034  git status 
+ 1035  git commit "add fichier ansible"
+ 1036  git commit "add fichier ansible" .
+ 1037  git commit "add fichier ansible" simpleplaybook.yml install_nginx.yml 
+ 1038  ll
+ 1039  git add install_nginx.yml 
+ 1040  git add simpleplaybook.yml 
+ 1041  git commit -m "add ansible"
+ 1042  git push 
+ 1043  git branch 
+ 1044  git branch  -v
+ 1045  git branch  features-users
+ 1046  git branch  -v
+ 1047  git checkout features-users 
+ 1048  git branch  -v
+ 1049  ll /home/oia/
+ 1050  ll /home/oia/nginx/
+ 1051  cp /home/oia/histo_docker.txt .
+ 1052  ll
+ 1053  git add histo_docker.txt 
+ 1054  git commit -m "add docker histo"
+ 1055  vim histo_docker.txt 
+ 1056  history 
+[root@localhost formations-git]# 
 
