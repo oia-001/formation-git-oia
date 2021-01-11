@@ -1,0 +1,17 @@
+---
+  - hosts: logicservers
+    become: yes
+    name: NTP Configuration
+        
+    tasks: 
+                 - name: Verification chrony installation
+                   yum: 
+                    name:
+                      - chrony
+                    state: present
+
+                 - name: verification demarrage chrony
+                   service: 
+                    name: chronyd
+                    state: started
+                    enabled: yes

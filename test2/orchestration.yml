@@ -1,0 +1,19 @@
+---
+  - name: "Orechestration Example"
+    hosts: logicservers
+    serial: 1
+
+    tasks:
+    - name: Test connexion
+      ping:
+    - name: "Arret du server"
+      debug: var=inventory_hostname
+      #- name: "upgrade Fireware"
+      #msg: Upgrade {{inventory_hostname}}
+
+              # - name: start server
+              #   debug: 
+              #   msg: Start {{ inventory_hostname }}
+              # - name: Verification Server
+              #   debug:
+              # - msg:  Verification {{ inventory_hostname }}

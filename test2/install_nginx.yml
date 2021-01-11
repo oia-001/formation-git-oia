@@ -1,0 +1,19 @@
+---
+  - name: "install nginx" 
+    hosts: localhost
+  
+    vars:
+          service_name: nginx
+          project_root: /var/www/html
+          #file_name: index.html
+  
+    tasks: 
+    - name: Test connexion
+      ping:
+    - name: Install nginx server
+      yum: pkg={{ service_name }} 
+    - name: Enable Apache on systemd
+      service: name={{ service_name }} enabled=yes
+      notify: restart nginx
+    - name: restart nginx
+      service: name={{ service_name }} state=restarted

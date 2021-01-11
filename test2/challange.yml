@@ -1,0 +1,12 @@
+---
+  - name: "install nginx" 
+    hosts: localhost
+  
+  
+    tasks: 
+    - name: Test connexion
+      ping:
+    - name: Find module
+      find:
+         path: /root/GIT
+         file_type: file
